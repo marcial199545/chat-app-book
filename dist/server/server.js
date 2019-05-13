@@ -4,5 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
+const socket_io_1 = __importDefault(require("socket.io"));
+const http_1 = __importDefault(require("http"));
 const app = new app_1.default();
-app.start();
+let server = http_1.default.createServer(app.app);
+let io = socket_io_1.default(server);
+io.on("connect", socket => {
+    console.log("new user connected");
+    socket.on("disconnect", () => {
+        console.log(`User disconnected`);
+    });
+});
+server.listen(app.app.get("PORT"), () => {
+    console.log(`listening to port §§§ ${app.app.get("PORT")} §§§`);
+});

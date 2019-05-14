@@ -6,9 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "clean": "rimraf ./dist",
-        "public": "ncp ./src/public/ ./dist/public/",
         "hbscopy": "ncp ./src/views/ ./dist/views/",
-        "build": "npm run clean && tsc && npm run hbscopy && npm run public",
+        "build": "npm run clean && tsc && npm run hbscopy  && rimraf ./dit/public/js/index.ts",
         "start": "node dist/server/server.js"
     },
     "author": "",

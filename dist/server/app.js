@@ -33,7 +33,7 @@ class Application {
     }
     routes() {
         this.app.use(indexRoutes_1.default);
-        this.app.use(express_1.default.static(path_1.default.join(__dirname, "../public")));
+        this.app.use(express_1.default.static(path_1.default.join(__dirname, "../../public")));
     }
     start() {
         this.app.listen(this.app.get("PORT"), () => {

@@ -35,7 +35,7 @@ class Application {
     }
     routes() {
         this.app.use(indexRoutes);
-        this.app.use(express.static(path.join(__dirname, "../public")));
+        this.app.use(express.static(path.join(__dirname, "../../public")));
     }
     start() {
         this.app.listen(this.app.get("PORT"), () => {

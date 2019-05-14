@@ -11,7 +11,10 @@ let server = http_1.default.createServer(app.app);
 let io = socket_io_1.default(server);
 io.on("connect", socket => {
     console.log("new user connected");
-    socket.emit("newEmail", { from: "mike@example.com", text: "Hey. What is going on.", createdAt: 123 });
+    socket.emit("newMessage", { from: "John", text: "See you then", createdAt: 123123 });
+    socket.on("createMessage", message => {
+        console.log(`TLC: createMessage ===> `, message);
+    });
     socket.on("disconnect", () => {
         console.log(`User disconnected`);
     });

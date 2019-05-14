@@ -5,6 +5,7 @@ socket.on("connect", function() {
 socket.on("disconnect", function() {
     console.log("Disconnected from server");
 });
-socket.on("newEmail", function(email) {
-    console.log("new Email", email);
+socket.on("newMessage", function(message) {
+    console.log(`TLC: newMessage ===> `, message);
 });
+socket.emit("createMessage", { from: "Andrew", text: "Yup, that works for me." });

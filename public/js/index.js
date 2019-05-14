@@ -8,4 +8,3 @@ socket.on("disconnect", function() {
 socket.on("newMessage", function(message) {
     console.log(`TLC: newMessage ===> `, message);
 });
-// socket.emit("createMessage", { from: "Andrew", text: "Yup, that works for me." });

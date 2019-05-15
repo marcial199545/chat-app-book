@@ -14,10 +14,11 @@ io.on("connect", socket => {
     socket.emit("newMessage", message_1.default.generateMessage("Admin", "welcome to chat app"));
     socket.broadcast.emit("newMessage", message_1.default.generateMessage("Admin", "New user connected"));
     console.log("new user connected");
-    socket.on("createMessage", message => {
-        console.log(`TLC: createMessage ===> `, message);
+    socket.on("createMessage", (message, callback) => {
+        console.log(`TCL: createMessage ===> `, message);
         // NOTE to emit an event to all users connected including the user that emits the event
         io.emit("newMessage", message_1.default.generateMessage(message.from, message.text));
+        callback(message);
         // NOTE to emit an event to all users connected but not the user that emits the event
         // socket.broadcast.emit("newMessage", { form: message.from, text: message.text, createdAt: new Date().getTime() });
     });

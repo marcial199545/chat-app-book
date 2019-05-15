@@ -1,6 +1,13 @@
-<div class="jumbotron">
-    <h1 class="display-4">Node Chat App with typescript</h1>
-    <p class="lead">This App is an example of a CRUD App using Typescript, mongoose, mongodb, handlebars and node
-    </p>
-    <p>to create a todo, simply click on the create link and enjoy</p>
+<h1>welcome to the chat App</h1>
+<div class="messages-container text-left">
+    <ul id="messages">
+    </ul>
 </div>
+<form id="message-form" class="">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button type="submit" class="btn btn-outline-success">Send</button>
+        </div>
+        <input type="text" class="form-control" name="message" placeholder="Message">
+    </div>
+</form>

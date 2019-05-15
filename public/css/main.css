@@ -1,0 +1,25 @@
+.messages-container {
+    background-color: #ffffff29;
+    color: black;
+    border-radius: 5px;
+    padding: 1px 0px;
+}
+#messages {
+    list-style: none;
+}
+#messages li {
+    border: 2px solid #00bc8c;
+    border-radius: 5px;
+    width: 40%;
+    margin-top: 12px;
+    color: white;
+    background-color: #75727261;
+    text-align: center;
+}
+.fas {
+    color: #00bc8c;
+    font-weight: 900;
+    padding: 0 4px;
+}
+.incoming-message {
+}

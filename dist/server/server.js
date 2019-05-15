@@ -22,6 +22,9 @@ io.on("connect", socket => {
         // NOTE to emit an event to all users connected but not the user that emits the event
         // socket.broadcast.emit("newMessage", { form: message.from, text: message.text, createdAt: new Date().getTime() });
     });
+    socket.on("createLocationMessage", coords => {
+        io.emit("newLocationMessage", message_1.default.generateLocationMessage("Admin", coords.latitude, coords.longitude));
+    });
     socket.on("disconnect", () => {
         console.log(`User disconnected`);
     });

@@ -1,6 +1,5 @@
 const socket = window.io();
 const form = jQuery("#message-form");
-console.log("TCL: form", form);
 socket.on("connect", function() {
     console.log("connected to server");
 });
@@ -16,7 +15,7 @@ socket.on("newMessage", function(message) {
 
 form.on("submit", function(e) {
     e.preventDefault();
-    socket.emit("createMessage", { from: "Marcial", text: jQuery("[name=message]").val() }, function(data) {
+    socket.emit("createMessage", { from: "User", text: jQuery("[name=message]").val() }, function(data) {
         console.log("ACKOWNLEDGE ==> Got it", data);
     });
     form.trigger("reset");

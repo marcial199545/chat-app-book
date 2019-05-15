@@ -11,9 +11,9 @@ const app = new app_1.default();
 let server = http_1.default.createServer(app.app);
 let io = socket_io_1.default(server);
 io.on("connect", socket => {
+    console.log("new user connected");
     socket.emit("newMessage", message_1.default.generateMessage("Admin", "welcome to chat app"));
     socket.broadcast.emit("newMessage", message_1.default.generateMessage("Admin", "New user connected"));
-    console.log("new user connected");
     socket.on("createMessage", (message, callback) => {
         console.log(`TCL: createMessage ===> `, message);
         // NOTE to emit an event to all users connected including the user that emits the event
